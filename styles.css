@@ -1,0 +1,244 @@
+:root {
+  color-scheme: light;
+  font-family: Arial, Helvetica, sans-serif;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: 700;
+  background: #fafafa;
+  color: #111;
+  --purple: #854dff;
+  --muted: #716f6f;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  flex-direction: row;
+  min-height: 100vh;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 24px;
+}
+
+.content {
+  width: 750px;
+  max-width: 100%;
+  padding: 38px;
+  background: #f0f0f0;
+  border: 1px solid #e3e3e3;
+  border-radius: 20px 20px 165px 20px;
+  box-shadow: 0 12px 34px rgb(0 0 0 / 9%);
+}
+
+.input-section {
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+}
+
+.input {
+  display: flex;
+  width: 200px;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+}
+
+.input label {
+  width: 56px;
+  flex: 0 0 56px;
+  margin: 0;
+  color: var(--muted);
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.input input {
+  width: auto;
+  min-width: 0;
+  flex: 1;
+  height: 60px;
+  padding: 10px 12px;
+  border: 1px solid #dedede;
+  border-radius: 9px;
+  outline: none;
+  background: #fff;
+  color: #151515;
+  font: inherit;
+  font-size: 24px;
+  letter-spacing: 2px;
+  transition: border-color 150ms ease, box-shadow 150ms ease;
+}
+
+.input input::placeholder {
+  color: #6b6b6b;
+  opacity: 1;
+}
+
+.input input:hover {
+  border-color: #aaa;
+}
+
+.input input:focus-visible {
+  border-color: var(--purple);
+  box-shadow: 0 0 0 3px rgb(133 77 255 / 18%);
+}
+
+.input input[aria-invalid="true"] {
+  border-color: #d9534f;
+}
+
+.error {
+  min-height: 17px;
+  margin-top: 6px;
+  color: #d9534f;
+  font-size: 11px;
+  font-style: italic;
+  font-weight: 400;
+}
+
+.calculate-row {
+  display: flex;
+  flex-direction: row;
+  height: 51px;
+  justify-content: flex-end;
+  margin-top: 10px;
+  border-top: 1px solid #d8d8d8;
+}
+
+#calculateBtn {
+  display: grid;
+  width: 52px;
+  height: 52px;
+  flex: 0 0 52px;
+  place-items: center;
+  margin-top: -26px;
+  padding: 12px;
+  border: 0;
+  border-radius: 50%;
+  background: var(--purple);
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 150ms ease, transform 150ms ease,
+    box-shadow 150ms ease;
+}
+
+#calculateBtn svg {
+  width: 100%;
+  height: 100%;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.5;
+}
+
+#calculateBtn:hover {
+  background: #151515;
+  transform: translateY(-2px);
+}
+
+#calculateBtn:focus-visible {
+  outline: 3px solid #151515;
+  outline-offset: 4px;
+  box-shadow: 0 0 0 6px rgb(133 77 255 / 22%);
+}
+
+.results p {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  margin: 0;
+  font-size: clamp(44px, 7vw, 60px);
+  font-style: italic;
+  font-weight: 800;
+  letter-spacing: -2px;
+  line-height: 1.1;
+}
+
+.results p + p {
+  margin-top: 10px;
+}
+
+.results p > span:first-child {
+  min-width: 50px;
+  color: var(--purple);
+}
+
+.results p > span:last-child {
+  color: #111;
+}
+
+@media (max-width: 520px) {
+  body {
+    padding: 16px;
+  }
+
+  .content {
+    width: 300px;
+    padding: 24px;
+    border-radius: 18px 18px 100px 18px;
+  }
+
+  .input-section {
+    gap: 10px;
+  }
+
+  .input {
+    width: calc((100% - 20px) / 3);
+    min-width: 0;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+  }
+
+  .input label {
+    width: auto;
+    flex: initial;
+    margin: 0 0 9px;
+    font-size: 9px;
+    letter-spacing: 1.5px;
+  }
+
+  .input input {
+    width: 100%;
+    flex: initial;
+    height: 54px;
+    padding: 8px;
+    font-size: 20px;
+    letter-spacing: 1px;
+  }
+
+  .error {
+    min-height: 30px;
+    font-size: 9px;
+  }
+
+  .calculate-row {
+    justify-content: center;
+    margin-top: 0;
+  }
+
+  #calculateBtn {
+    width: 52px;
+    height: 52px;
+    flex-basis: 52px;
+  }
+
+  .results p {
+    gap: 8px;
+    font-size: 42px;
+    letter-spacing: -1.5px;
+  }
+
+  .results p > span:first-child {
+    min-width: 40px;
+  }
+}

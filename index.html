@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Calculate your age in years, months, and days."
+    />
+    <title>Age Calculator</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <main class="content">
+      <form id="ageForm" novalidate>
+        <section class="input-section" aria-label="Date of birth">
+          <div class="input">
+            <label for="dayIn">Day</label>
+            <input
+              id="dayIn"
+              name="day"
+              type="text"
+              inputmode="numeric"
+              autocomplete="bday-day"
+              placeholder="DD"
+              maxlength="2"
+              aria-describedby="dayError"
+            />
+            <span class="error" id="dayError"></span>
+          </div>
+          <div class="input">
+            <label for="monthIn">Month</label>
+            <input
+              id="monthIn"
+              name="month"
+              type="text"
+              inputmode="numeric"
+              autocomplete="bday-month"
+              placeholder="MM"
+              maxlength="2"
+              aria-describedby="monthError"
+            />
+            <span class="error" id="monthError"></span>
+          </div>
+          <div class="input">
+            <label for="yearIn">Year</label>
+            <input
+              id="yearIn"
+              name="year"
+              type="text"
+              inputmode="numeric"
+              autocomplete="bday-year"
+              placeholder="YYYY"
+              maxlength="4"
+              aria-describedby="yearError"
+            />
+            <span class="error" id="yearError"></span>
+          </div>
+        </section>
+
+        <div class="calculate-row">
+          <button id="calculateBtn" type="submit" aria-label="Calculate age">
+            <svg
+              viewBox="0 0 24 24"
+              aria-hidden="true"
+              focusable="false"
+            >
+              <path d="M12 4v16m-7-7 7 7 7-7" />
+            </svg>
+          </button>
+        </div>
+
+        <section class="results" aria-label="Age result" aria-live="polite">
+          <p><span id="yearOut">--</span> <span>years</span></p>
+          <p><span id="monthOut">--</span> <span>months</span></p>
+          <p><span id="dayOut">--</span> <span>days</span></p>
+        </section>
+      </form>
+    </main>
+  </body>
+</html>
